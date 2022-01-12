@@ -1,0 +1,51 @@
+.shiva-token {
+  padding-bottom: 190px;
+  padding-top: 200px;
+}
+.token-box {
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+  border-radius: 10px;
+  text-align: center;
+}
+.token-box h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 75px;
+  color: #ffffff;
+  padding-top: 50px;
+}
+.main-btn-2 {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .token-box {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .token-box h1 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 40px;
+    color: #ffffff;
+    padding-top: 40px;
+  }
+}

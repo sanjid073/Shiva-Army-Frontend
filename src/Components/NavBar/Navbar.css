@@ -1,0 +1,9 @@
+.Navbar-logo{
+    width: 224px;
+    /* height: 38px; */
+}
+.nav-item a {
+    font-size: 18px;
+    font-weight: 500;
+    padding-right: 40px !important;
+}

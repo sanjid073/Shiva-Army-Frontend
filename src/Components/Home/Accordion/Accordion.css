@@ -1,0 +1,62 @@
+/* .Accordion-section{
+    padding-bottom: 200px;
+} */
+.Accordion-header h3{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 180%;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 190px;
+}
+
+.Accordion-header p {
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+padding-bottom: 50px;
+color: rgba(255, 255, 255, 0.5);
+}
+.accordion-button{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px !important;
+color: rgba(255, 255, 255, 0.5) !important;
+margin-bottom: 20px;
+}
+.accordion-body{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px !important;
+    border: none; 
+    color: rgba(255, 255, 255, 0.5) !important;  
+}
+.accordion-button{
+    border-bottom: 1px solid #FFFFFF;
+}
+.accordion-button:focus {
+    z-index: 0;
+    border-color: #ffffff;
+    outline: 0;
+    box-shadow: none;
+}
+.accordion-button::after {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    content: "";
+    background-image: url(../../../imgs/Group\ 18530.png);
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform .2s ease-in-out;
+}

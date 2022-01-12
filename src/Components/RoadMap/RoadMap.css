@@ -1,0 +1,28 @@
+.roadmap-item{}
+.roadMap-box{
+    width: 374px;
+height: 100%;
+background: #352940;
+padding: 40px 20px;
+}
+.roadMap-box h3{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+text-align: center;
+color: #B55BFF;
+
+}
+.roadMap-box ul li{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+text-indent: 3px;
+
+color: #FFFFFF;
+
+}

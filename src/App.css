@@ -1,0 +1,21 @@
+/* font cdn */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.background {
+  background: url(../src/imgs/website-bg.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+.main-btn {
+  background: linear-gradient(214.02deg, #b75cff 6.04%, #671ae4 92.95%);
+  border-radius: 10px;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+}

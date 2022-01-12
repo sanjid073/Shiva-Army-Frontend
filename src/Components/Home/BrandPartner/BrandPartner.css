@@ -1,0 +1,17 @@
+.brand-partner {
+  padding-top: 100px;
+  padding-bottom: 180px;
+  text-align: center;
+}
+/* responsive */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .brand-partner {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+  .brand-partner img {
+    margin-bottom: 20px;
+  }
+}

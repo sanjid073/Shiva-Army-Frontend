@@ -1,0 +1,80 @@
+.footer{
+    padding-bottom: 100px;
+}
+
+.footer-logo p{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 22px;
+margin-top: 20px;
+color: rgba(255, 255, 255, 0.5);
+
+}
+.footer-about h3{
+    font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 30px;
+/* identical to box height */
+
+
+
+color: #FFFFFF;
+
+}
+.footer-about a{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 22px;
+/* identical to box height */
+margin: 20px 0;
+text-decoration: none;
+display: block;
+color: rgba(255, 255, 255, 0.5);
+}
+.footer-Company h3{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+.footer-Company a {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    /* identical to box height */
+    margin: 20px 0;
+    text-decoration: none;
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    }
+.footer-Contact h3{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+.footer-Contact a {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 22px;
+    /* identical to box height */
+    
+    text-decoration: none;
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+}

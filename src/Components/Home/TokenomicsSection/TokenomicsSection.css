@@ -1,0 +1,61 @@
+.TokenomicsSection {
+  padding-top: 192px;
+  position: relative;
+}
+.TokenomicsSection-header h3 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: Roboto;
+  font-size: 40px;
+  line-height: 47px;
+  color: #ffffff;
+}
+.TokenomicsSection-header p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 149px;
+}
+.tokenmics-analysis img {
+  width: 111px;
+  margin-bottom: 47px;
+}
+.tokenmics-analysis h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 59.6px;
+  line-height: 89px;
+  color: #ffffff;
+}
+.tokenmics-analysis p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 237px;
+}
+.star-1 {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+}
+
+.star-1{
+    animation-name: example-2;
+    animation: example-1 1s infinite;
+    animation-timing-function: ease;
+
+}
+@keyframes example-2 {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(-15px); }
+    100% { transform: translateX(0); }
+}

@@ -1,0 +1,65 @@
+.about {
+  padding-top: 0;
+  padding-bottom: 50px;
+}
+.about-header {
+  margin-bottom: 110px;
+}
+.about-header h3 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: Roboto;
+  font-size: 40px;
+  line-height: 47px;
+  color: #ffffff;
+}
+.about-header p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+.about-info h3 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 45px;
+  color: #ffffff;
+}
+.about-info p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 180%;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.pet-i{
+    animation-name: example;
+    animation: example 2s infinite;
+    animation-timing-function: ease;
+
+}
+@keyframes example {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@media only screen and (max-width: 600px) {
+  .pet-i{
+    text-align: center;
+  }
+  .pet-i img{
+    width: 300px;
+    margin-bottom: 20px;
+  }
+}
+
