@@ -2,9 +2,10 @@ import React from "react";
 import UseFirebase from "../../Hooks/UseFirebase";
 import "./Login.css"
 import Zoom from 'react-reveal/Zoom';
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  
+  let navigate = useNavigate();
   const {error, getEmail,getPassWord,SignInWithEmail,setUser,setError, setIsLoading } = UseFirebase();
 
   
@@ -23,6 +24,8 @@ const Login = () => {
            SignInWithEmail()
          .then((userCredential) => {
             setUser(userCredential.user)
+            navigate("/DashBoard")
+            console.log(userCredential.user);
             console.log("login");
           })
           .catch((err) => {

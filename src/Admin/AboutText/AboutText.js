@@ -22,10 +22,13 @@ const Review = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://peaceful-scrubland-01312.herokuapp.com/deleteAboutText/${id}`, {
-          method: "DELETE",
-          headers: { "Content-type": "application/json" },
-        })
+        fetch(
+          `https://peaceful-scrubland-01312.herokuapp.com/deleteAboutText/${id}`,
+          {
+            method: "DELETE",
+            headers: { "Content-type": "application/json" },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -74,7 +77,7 @@ const Review = () => {
   return (
     <div className="analysis">
       <div className="from-section text-center">
-        <h3 className="fw-bold text-center">UpDate your Analysis</h3>
+        <h3 className="fw-bold text-center">UpDate your About Text</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           {errors.star && <span>Please type Number between 0-5</span>}
           <textarea
