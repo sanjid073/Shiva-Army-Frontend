@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
-const Review = () => {
-  const [aboutTexts, setAboutTexts] = useState([]);
+const ContactInfo = () => {
+  const [contactTexts, setContactTexts] = useState([]);
   const [isDelete, setIsDelete] = useState(null);
   const [isUpdate, setIsUpdated] = useState(null);
   useEffect(() => {
-    fetch("https://peaceful-scrubland-01312.herokuapp.com/aboutText")
+    fetch("http://localhost:5000/contact")
       .then((res) => res.json())
-      .then((data) => setAboutTexts(data));
+      .then((data) => setContactTexts(data));
   }, [isDelete, isUpdate]);
   const deleteOrders = (id) => {
     Swal.fire({
@@ -23,7 +23,7 @@ const Review = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://peaceful-scrubland-01312.herokuapp.com/deleteAboutText/${id}`,
+          `http://localhost:5000/deleteContact/${id}`,
           {
             method: "DELETE",
             headers: { "Content-type": "application/json" },
@@ -57,7 +57,7 @@ const Review = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("https://peaceful-scrubland-01312.herokuapp.com/aboutText", {
+    fetch("http://localhost:5000/contact", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -67,7 +67,7 @@ const Review = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          Swal.fire("aboutText Added!", "Review has been added!", "success");
+          Swal.fire("Contact info Added!", "Review has been added!", "success");
           reset();
         } else {
         }
@@ -77,39 +77,69 @@ const Review = () => {
   return (
     <div className="analysis">
       <div className="from-section text-center">
-        <h3 className="fw-bold text-center">UpDate your About Text</h3>
+        <h3 className="fw-bold text-center">UpDate your Contact Info</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           {errors.star && <span>Please type Number between 0-5</span>}
           <textarea
-            name="About Sub Heading"
+            name="Contact Phone Number"
             className="mb-3"
-            placeholder="About Sub Heading"
+            placeholder="Contact Phone Number"
             cols="30"
-            rows="3"
-            {...register("about_sub", { required: true })}
+            rows="2"
+            {...register("contact_phone", { required: true })}
           ></textarea>
           <textarea
-            name="About text"
-            id=""
-            placeholder="About Text"
-            cols="60"
-            rows="8"
-            {...register("about_text", { required: true })}
+            name="Contact email"
+            className="mb-3"
+            placeholder="Contact email address"
+            cols="30"
+            rows="2"
+            {...register("contact_email", { required: true })}
           ></textarea>
+          <textarea
+            name="Youtube link"
+            className="mb-3"
+            placeholder="Youtube Link"
+            cols="30"
+            rows="2"
+            {...register("contact_youtube", { required: true })}
+          ></textarea>
+          <textarea
+            name="Discord link"
+            className="mb-3"
+            placeholder="Discord link"
+            cols="30"
+            rows="2"
+            {...register("contact_discord", { required: true })}
+          ></textarea>
+          
+          <textarea
+            name="Instagram link"
+            className="mb-3"
+            placeholder="Instagram link"
+            cols="30"
+            rows="2"
+            {...register("contact_instagram", { required: true })}
+          ></textarea>
+          
 
           <input type="submit" />
         </form>
       </div>
 
-      {aboutTexts.map((aboutText) => (
+      {contactTexts.map((contactTexts) => (
         <div className="about-info">
-          <p>{aboutText.about_sub}</p>
-          <p>{aboutText.about_text}</p>
+          <p>{contactTexts.contact_phone}</p>
+          <p>{contactTexts.contact_email}</p>
+          <p>{contactTexts.contact_youtube}</p>
+          <p>{contactTexts.contact_discord}</p>
+          <p>{contactTexts.contact_instagram}</p>
+          
           <button
-            onClick={() => deleteOrders(aboutText._id)}
+            onClick={() => deleteOrders(contactTexts._id)}
             className="btn btn-danger mt-2 "
           >
-            Delete About text
+            Delete Contact Info
           </button>
         </div>
       ))}
@@ -117,4 +147,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default ContactInfo;

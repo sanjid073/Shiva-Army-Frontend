@@ -11,29 +11,40 @@ const Intro = () => {
     .then(res => res.json())
     .then(data => setAnalysis(data))
   }, [])
-  // analysiss.map(analysis => console.log(analysis.Liquidity))
+  const [introTexts, setIntroTexts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/intro")
+      .then((res) => res.json())
+      .then((data) => setIntroTexts(data));
+  }, []);
   return (
     <div className="container">
       <div className="intro">
         <div className="row">
+        
           <div className="col-lg-6">
               <img className="star" src={star} alt="" />
+              {introTexts.map(introText=> 
               <Zoom left>
             <h3>
               World's Best <br />
               Community Coin
             </h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit.
-              Nunc vulputate libero et velit.
+           
+              <p>
+              {introText.intro_sub}
             </p>
             <div className="d-flex address">
               <div className="address-box">
-                0xc748673057861a797275CD8A068AbB95A9
+              {introText.address_box}
               </div>
+            
               <button className="main-btn">Copy Address</button>
             </div>
             </Zoom>
+            
+            ) }
             
            {analysiss.map(analysis =><Bounce bottom> <div className="d-flex analysis">
                 <div className="div1">

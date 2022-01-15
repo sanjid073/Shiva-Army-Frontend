@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Footer.css"
 import footer_logo from "../../imgs/ShibaArmyToken (2).png"
 import { Link } from 'react-router-dom';
@@ -7,6 +7,13 @@ import discord from "../../imgs/discord.png"
 import insta from "../../imgs/instagram.png"
 
 const Footer = () => {
+    const [contactTexts, setContactTexts] = useState([]);
+
+    useEffect(() => {
+      fetch("http://localhost:5000/contact")
+        .then((res) => res.json())
+        .then((data) => setContactTexts(data));
+    }, []);
     return (
         <div className="footer">
             <div className="container">
@@ -36,16 +43,25 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="col-lg-3">
-                        <div className="footer-Contact">
+                        {
+                            contactTexts.map(contactText => <div className="footer-Contact">
                             <h3>Contact</h3>
-                            <Link  to="/">+012 3456789</Link>
-                            <Link to="/">info@shibaarmytoken</Link>
+                            <Link to="/" >{contactText.contact_phone}</Link>
+                            <Link to="/">{contactText.contact_email}</Link>
                             <div className="social-icons d-flex">
+                            <a href={contactText.contact_youtube}>
                                 <img className="me-5" src={youtube} alt="" />
+                                </a>
+                                <a href={contactText.contact_discord}>
                                 <img  className="me-5"  src={discord} alt="" />
+                                </a>
+                                <a href={contactText.contact_discord}>
                                 <img    src={insta} alt="" />
+                                </a>
+                               
                             </div>
-                        </div>
+                        </div>)
+                        }
                         
                     </div>
                 </div>

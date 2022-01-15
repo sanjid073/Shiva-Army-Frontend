@@ -6,6 +6,8 @@ import FaqQustionAndAnswer from "../FaqQustionAndAnswer/FaqQustionAndAnswer";
 import AboutText from "../../Admin/AboutText/AboutText"
 import HolderAndPrice from "../HolderAndPrice/HolderAndPrice";
 import UseFirebase from "../../Hooks/UseFirebase";
+import IntroText from "../IntroText/IntroText";
+import ContactInfo from "../ContactInfo/ContactInfo";
 const Dashboard = () => {
     const {Logout} = UseFirebase()
   return (
@@ -51,6 +53,12 @@ const Dashboard = () => {
             </div>
             <div class="list-group list-group-flush my-3">
               <a
+                href="#introText"
+                class="list-group-item list-group-item-action second-text fw-bold "
+              >
+                <i class="fas fa-project-diagram me-2"></i>Intro Text
+              </a>
+              <a
                 href="#Analytics"
                 class="list-group-item list-group-item-action second-text fw-bold "
               >
@@ -75,10 +83,10 @@ const Dashboard = () => {
                 <i class="fas fa-shopping-cart me-2"></i>Holder And Price
               </a>
               <a
-                href=""
+                href="#contactInfo"
                 class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
               >
-                <i class="fas fa-gift me-2"></i>Products
+                <i class="fas fa-gift me-2"></i>Contact Info
               </a>
               <a
                 href=""
@@ -123,6 +131,10 @@ const Dashboard = () => {
 
         <div class="container-fluid px-4">
           <div class="row my-5">
+            <div id="introText">
+              <IntroText/>
+            </div>
+            <hr />
             <div id="Analytics">
               <Analysis></Analysis>
             </div>
@@ -137,6 +149,9 @@ const Dashboard = () => {
             <hr />
             <div id="holderAndPrice">
             <HolderAndPrice/> 
+            </div>
+            <div id="contactInfo">
+            <ContactInfo/> 
             </div>
           </div>
         </div>
