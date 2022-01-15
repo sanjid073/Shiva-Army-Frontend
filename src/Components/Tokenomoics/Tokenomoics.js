@@ -11,13 +11,13 @@ import ShivaToken from "../Home/ShivaToken/ShivaToken";
 const Tokenomoics = () => {
   const [analysiss, setAnalysis] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/analysis")
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/analysis")
       .then((res) => res.json())
       .then((data) => setAnalysis(data));
   }, []);
   const [tokenomoics, setTokenomoics] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tokenomoics")
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/tokenomoics")
       .then((res) => res.json())
       .then((data) => setTokenomoics(data));
   }, []);

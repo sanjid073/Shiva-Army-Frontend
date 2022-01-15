@@ -8,7 +8,7 @@ const HolderAndPrice = () => {
     const [tokenomoics, setTokenomoics] = useState([]);
     const [isDelete, setIsDelete] = useState(null);
     useEffect(() => {
-      fetch("http://localhost:5000/tokenomoics")
+      fetch("https://peaceful-scrubland-01312.herokuapp.com/tokenomoics")
         .then((res) => res.json())
         .then((data) => setTokenomoics(data));
     }, [isDelete]);
@@ -23,7 +23,7 @@ const HolderAndPrice = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/deleteTokenomoics/${id}`, {
+          fetch(`https://peaceful-scrubland-01312.herokuapp.com/deleteTokenomoics/${id}`, {
             method: "DELETE",
             headers: { "Content-type": "application/json" },
           })
@@ -56,7 +56,7 @@ const HolderAndPrice = () => {
 
   const onSubmit = (data) =>{ 
       console.log(data)
-    fetch("http://localhost:5000/tokenomoics", {
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/tokenomoics", {
         method: "POST",
         headers: {
           "content-type": "application/json",

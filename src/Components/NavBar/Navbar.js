@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import UseFirebase from "../../Hooks/UseFirebase";
 import logo from "../../imgs/Shiva-logo.png"
 import "./Navbar.css"
 const Navbar = () => {
+  const {user,Logout} = UseFirebase()
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-transparent pt-3">
       <div className="container">
@@ -42,20 +44,35 @@ const Navbar = () => {
               FAQ
               </NavLink>
             </li>
-            <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dashboard
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><NavLink to="/analysis" class="dropdown-item">Analysis</NavLink></li>
-            <li><NavLink to="/FaqQustion" class="dropdown-item">Faq Question</NavLink></li>
-            <li><NavLink to="/aboutText" class="dropdown-item">AboutText</NavLink></li>
-            <li><NavLink to="/holderAndPrice" class="dropdown-item">holderAndPrice</NavLink></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
+           {
+             user.email ?
+             <>
+             <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Dashboard
+             </a>
+             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <li><NavLink to="/analysis" class="dropdown-item">Analysis</NavLink></li>
+               <li><NavLink to="/FaqQustion" class="dropdown-item">Faq Question</NavLink></li>
+               <li><NavLink to="/aboutText" class="dropdown-item">AboutText</NavLink></li>
+               <li><NavLink to="/holderAndPrice" class="dropdown-item">holderAndPrice</NavLink></li>
+             </ul>
+           </li>
+           <li onClick={Logout} className="nav-item">
+          
+              <NavLink className="nav-link active" aria-current="page" to="/">
+              Log Out
+              </NavLink>
+            
+           
+         </li>
+         </>
+          : <li className="nav-item">
+              <NavLink className="nav-link active" aria-current="page" to="/adminLogin">
+              Admin
+              </NavLink>
+            </li>
+           }
             <li className="nav-item">
              <button className=" main-btn">
              Buy on Pancake

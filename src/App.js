@@ -11,6 +11,7 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 import HolderAndPrice from "./Admin/HolderAndPrice/HolderAndPrice";
 import RoadMap from "./Components/RoadMap/RoadMap";
 import Faq from "./Components/Faq/Faq";
+import Login from "./Admin/Login/Login";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/roadMap" element={<RoadMap/>} />
           <Route path="/FAQ" element={<Faq/>} />
+          <Route path="/adminLogin" element={<Login/>} />
           <Route path="/analysis" element={<Analysis/>} />
           <Route path="/holderAndPrice" element={<HolderAndPrice/>} />
           <Route path="/FaqQustion" element={<FaqQustionAndAnswer/>} />

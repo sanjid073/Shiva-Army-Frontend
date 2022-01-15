@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Login from '../../Admin/Login/Login';
 import "./Faq.css"
 
 const Faq = () => {
     const [accordions, setAccordions] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:5000/accordion")
+      fetch("https://peaceful-scrubland-01312.herokuapp.com/accordion")
         .then((res) => res.json())
         .then((data) => setAccordions(data));
     }, []);

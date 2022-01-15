@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import ShivaToken from "../Home/ShivaToken/ShivaToken";
 import "./RoadMap.css";
+import Bounce from 'react-reveal/Bounce';
 
 const RoadMap = () => {
   return (
@@ -15,6 +16,7 @@ const RoadMap = () => {
 
         <div className="roadmap-item">
           <div className="row align-items-baseline">
+          <Bounce top>
             <div className="col-lg-4 mb-3">
               <div className="roadMap-box">
                 <h3>Phase 1</h3>
@@ -26,6 +28,8 @@ const RoadMap = () => {
                 </ul>
               </div>
             </div>
+            </Bounce>
+            <Bounce top>
             <div className="col-lg-4 mb-3">
               <div className="roadMap-box">
                 <h3>Phase 2</h3>
@@ -48,6 +52,8 @@ const RoadMap = () => {
                 </ul>
               </div>
             </div>
+            </Bounce>
+            <Bounce top>
             <div className="col-lg-4">
               <div className="roadMap-box">
                 <h3>Phase 3</h3>
@@ -75,6 +81,7 @@ const RoadMap = () => {
                 </ul>
               </div>
             </div>
+            </Bounce>
           </div>
         </div>
          

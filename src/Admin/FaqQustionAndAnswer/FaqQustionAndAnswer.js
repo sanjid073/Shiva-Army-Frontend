@@ -8,7 +8,7 @@ const FaqQustionAndAnswer = () => {
   const [isDelete, setIsDelete] = useState(null);
   const [isUpdate, setIsUpdated] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/accordion")
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/accordion")
       .then((res) => res.json())
       .then((data) => setAccordions(data));
   }, [isDelete, isUpdate]);
@@ -23,7 +23,7 @@ const FaqQustionAndAnswer = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteAccordion/${id}`, {
+        fetch(`https://peaceful-scrubland-01312.herokuapp.com/deleteAccordion/${id}`, {
           method: "DELETE",
           headers: { "Content-type": "application/json" },
         })
@@ -55,7 +55,7 @@ const FaqQustionAndAnswer = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/accordion", {
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/accordion", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -74,8 +74,8 @@ const FaqQustionAndAnswer = () => {
 
   return (
     <div className="analysis">
-      <div className="from-section text-center">
-        <h3 className="fw-bold text-center">UpDate your Analysis</h3>
+      <div className="from-section-2 text-center">
+        <h3 className="fw-bold text-center">UpDate your FAQ</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           {errors.faq_qus_1 && <span>Required all field</span>}
           <input

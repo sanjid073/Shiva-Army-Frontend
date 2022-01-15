@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Accordion.css";
+import Zoom from 'react-reveal/Zoom';
 
 const Accordion = () => {
   const [accordions, setAccordions] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:5000/accordion")
+      fetch("https://peaceful-scrubland-01312.herokuapp.com/accordion")
         .then((res) => res.json())
         .then((data) => setAccordions(data));
     }, []);
@@ -20,7 +21,7 @@ const Accordion = () => {
         </div>
         <div className="row">
         {
-          accordions.map(accordion => <>  <div className="col-lg-6">
+          accordions.map(accordion => <> <Zoom left>  <div className="col-lg-6">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item  bg-transparent">
               <h2 class="accordion-header " id="flush-headingOne">
@@ -172,6 +173,7 @@ const Accordion = () => {
             </div>
           </div>
         </div>
+        </Zoom>
         </>
         )
         }

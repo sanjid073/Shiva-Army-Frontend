@@ -7,7 +7,7 @@ const Review = () => {
   const [isDelete, setIsDelete] = useState(null);
   const [isUpdate, setIsUpdated] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/aboutText")
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/aboutText")
       .then((res) => res.json())
       .then((data) => setAboutTexts(data));
   }, [isDelete, isUpdate]);
@@ -22,7 +22,7 @@ const Review = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteAboutText/${id}`, {
+        fetch(`https://peaceful-scrubland-01312.herokuapp.com/deleteAboutText/${id}`, {
           method: "DELETE",
           headers: { "Content-type": "application/json" },
         })
@@ -54,7 +54,7 @@ const Review = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/aboutText", {
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/aboutText", {
       method: "POST",
       headers: {
         "content-type": "application/json",
