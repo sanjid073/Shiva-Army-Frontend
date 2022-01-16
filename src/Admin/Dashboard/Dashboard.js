@@ -8,6 +8,7 @@ import HolderAndPrice from "../HolderAndPrice/HolderAndPrice";
 import UseFirebase from "../../Hooks/UseFirebase";
 import IntroText from "../IntroText/IntroText";
 import ContactInfo from "../ContactInfo/ContactInfo";
+import TokenomicsText from "../TokenomicsText/TokenomicsText";
 const Dashboard = () => {
     const {Logout} = UseFirebase()
   return (
@@ -89,10 +90,10 @@ const Dashboard = () => {
                 <i class="fas fa-gift me-2"></i>Contact Info
               </a>
               <a
-                href=""
+                href="#TokenomoicsSubHeading"
                 class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
               >
-                <i class="fas fa-comment-dots me-2"></i>Chat
+                <i class="fas fa-comment-dots me-2"></i>Tokenomoics Sub Heading
               </a>
               <a
                 href=""
@@ -137,6 +138,10 @@ const Dashboard = () => {
             <hr />
             <div id="Analytics">
               <Analysis></Analysis>
+            </div>
+            <hr />
+            <div id="TokenomoicsSubHeading">
+              <TokenomicsText/>
             </div>
             <hr />
             <div id="FaqQustion">

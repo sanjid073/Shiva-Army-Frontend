@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
-const ContactInfo = () => {
-  const [contactTexts, setContactTexts] = useState([]);
+const TokenomicsText = () => {
+  const [tokenomoicsSubHeadingTexts, setTokenomoicsSubHeadingTexts] = useState([]);
   const [isDelete, setIsDelete] = useState(null);
   const [isUpdate, setIsUpdated] = useState(null);
   useEffect(() => {
-    fetch("https://peaceful-scrubland-01312.herokuapp.com/contact")
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/tokenomoicsSubHeading")
       .then((res) => res.json())
-      .then((data) => setContactTexts(data));
+      .then((data) => setTokenomoicsSubHeadingTexts(data));
   }, [isDelete, isUpdate]);
   const deleteOrders = (id) => {
     Swal.fire({
@@ -23,7 +23,7 @@ const ContactInfo = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://peaceful-scrubland-01312.herokuapp.com/deleteContact/${id}`,
+          `https://peaceful-scrubland-01312.herokuapp.com/deleteTokenomoicsSubHeading/${id}`,
           {
             method: "DELETE",
             headers: { "Content-type": "application/json" },
@@ -57,7 +57,7 @@ const ContactInfo = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("https://peaceful-scrubland-01312.herokuapp.com/contact", {
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/tokenomoicsSubHeading", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -67,7 +67,7 @@ const ContactInfo = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          Swal.fire("Contact info Added!", "Review has been added!", "success");
+          Swal.fire("Tokenomoics SubHeading Added!", "Review has been added!", "success");
           reset();
         } else {
         }
@@ -77,69 +77,33 @@ const ContactInfo = () => {
   return (
     <div className="analysis">
       <div className="from-section text-center">
-        <h3 className="fw-bold text-center">UpDate your Contact Info</h3>
+        <h3 className="fw-bold text-center">UpDate your Tokenomoics SubHeading</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           {errors.star && <span>Please type Number between 0-5</span>}
           <textarea
-            name="Contact Phone Number"
+            name="tokenomoics_sub"
             className="mb-3"
-            placeholder="Contact Phone Number"
-            cols="30"
-            rows="2"
-            {...register("contact_phone", { required: true })}
+            placeholder="Tokenomoics Sub Heading"
+            cols="60"
+            rows="4"
+            {...register("tokenomoics_sub", { required: true })}
           ></textarea>
-          <textarea
-            name="Contact email"
-            className="mb-3"
-            placeholder="Contact email address"
-            cols="30"
-            rows="2"
-            {...register("contact_email", { required: true })}
-          ></textarea>
-          <textarea
-            name="Youtube link"
-            className="mb-3"
-            placeholder="Youtube Link"
-            cols="30"
-            rows="2"
-            {...register("contact_youtube", { required: true })}
-          ></textarea>
-          <textarea
-            name="Discord link"
-            className="mb-3"
-            placeholder="Discord link"
-            cols="30"
-            rows="2"
-            {...register("contact_discord", { required: true })}
-          ></textarea>
-          
-          <textarea
-            name="Instagram link"
-            className="mb-3"
-            placeholder="Instagram link"
-            cols="30"
-            rows="2"
-            {...register("contact_instagram", { required: true })}
-          ></textarea>
-          
 
           <input type="submit" />
         </form>
       </div>
 
-      {contactTexts.map((contactTexts) => (
-        <div className="about-info">
-          <p>{contactTexts.contact_phone}</p>
-          <p>{contactTexts.contact_email}</p>
-          <p>{contactTexts.contact_youtube}</p>
-          <p>{contactTexts.contact_discord}</p>
-          <p>{contactTexts.contact_instagram}</p>
-          
+      {tokenomoicsSubHeadingTexts.map((tokenomoicsSubHeading) => (
+        <div className="intro">
+           <p className="m-0">
+             {tokenomoicsSubHeading.tokenomoics_sub}
+            </p>
+            
           <button
-            onClick={() => deleteOrders(contactTexts._id)}
+            onClick={() => deleteOrders(tokenomoicsSubHeading._id)}
             className="btn btn-danger mt-2 "
           >
-            Delete Contact Info
+            Delete Intro Text and Address
           </button>
         </div>
       ))}
@@ -147,4 +111,4 @@ const ContactInfo = () => {
   );
 };
 
-export default ContactInfo;
+export default TokenomicsText;

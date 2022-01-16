@@ -44,11 +44,16 @@ const Navbar = () => {
               FAQ
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link active" aria-current="page" to="/team">
+              Team
+              </NavLink>
+            </li>
           
             <li className="nav-item">
-             <button className=" main-btn">
+            <a href="https://pancakeswap.finance/"> <button className=" main-btn">
              Buy on Pancake
-             </button>
+             </button></a>
             </li>
            
             

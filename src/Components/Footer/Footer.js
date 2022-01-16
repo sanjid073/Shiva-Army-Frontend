@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./Footer.css"
 import footer_logo from "../../imgs/ShibaArmyToken (2).png"
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import youtube from "../../imgs/youtube.png"
 import discord from "../../imgs/discord.png"
 import insta from "../../imgs/instagram.png"
@@ -10,7 +10,7 @@ const Footer = () => {
     const [contactTexts, setContactTexts] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:5000/contact")
+      fetch("https://peaceful-scrubland-01312.herokuapp.com/contact")
         .then((res) => res.json())
         .then((data) => setContactTexts(data));
     }, []);
@@ -27,27 +27,27 @@ const Footer = () => {
                     <div className="col-lg-3">
                         <div className="footer-about">
                             <h3>About</h3>
-                            <Link  to="/">Product</Link>
-                            <Link to="/">Resource</Link>
-                            <Link to="/">Term & Condition</Link>
-                            <Link to="/">FAQ</Link>
+                            <NavLink  to="/">Product</NavLink>
+                            <NavLink to="/">Resource</NavLink>
+                            <NavLink to="/">Term & Condition</NavLink>
+                            <NavLink to="/FAQ">FAQ</NavLink>
                         </div>
                     </div>
                     <div className="col-lg-3">
                         <div className="footer-Company">
                             <h3>Company</h3>
-                            <Link  to="/">Our Team</Link>
-                            <Link to="/">Partner With Us</Link>
-                            <Link to="/">Privacy & Policy</Link>
-                            <Link to="/">Features</Link>
+                            <NavLink  to="/team">Our Team</NavLink>
+                            <NavLink to="/">Partner With Us</NavLink>
+                            <NavLink to="/">Privacy & Policy</NavLink>
+                            <NavLink to="/">Features</NavLink>
                         </div>
                     </div>
                     <div className="col-lg-3">
                         {
                             contactTexts.map(contactText => <div className="footer-Contact">
                             <h3>Contact</h3>
-                            <Link to="/" >{contactText.contact_phone}</Link>
-                            <Link to="/">{contactText.contact_email}</Link>
+                            <NavLink to="/" >{contactText.contact_phone}</NavLink>
+                            <NavLink to="/">{contactText.contact_email}</NavLink>
                             <div className="social-icons d-flex">
                             <a href={contactText.contact_youtube}>
                                 <img className="me-5" src={youtube} alt="" />

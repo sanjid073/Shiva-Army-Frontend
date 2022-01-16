@@ -1,0 +1,22 @@
+.roadMap-heading{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+}
+.roadMap-subHeading{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+padding-bottom: 89px;
+
+/* half white */
+
+color: rgba(255, 255, 255, 0.5);
+}

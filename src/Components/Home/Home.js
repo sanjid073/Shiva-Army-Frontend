@@ -3,8 +3,8 @@ import About from '../About/About';
 import Accordion from './Accordion/Accordion';
 import BrandPartner from './BrandPartner/BrandPartner';
 import Intro from './Intro/Intro';
+import RoadMapSection from './RoadMapSection/RoadMapSection';
 import ShivaToken from './ShivaToken/ShivaToken';
-import Sliders from './Slider/Sliders';
 import TokenomicsSection from './TokenomicsSection/TokenomicsSection';
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
             <BrandPartner></BrandPartner>
             <About></About>
             <TokenomicsSection></TokenomicsSection>
-            <Sliders></Sliders>
+            <RoadMapSection/>
             <Accordion></Accordion>
             <ShivaToken></ShivaToken>
         </div>

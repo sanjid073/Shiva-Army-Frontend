@@ -14,7 +14,7 @@ const Intro = () => {
   const [introTexts, setIntroTexts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/intro")
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/intro")
       .then((res) => res.json())
       .then((data) => setIntroTexts(data));
   }, []);

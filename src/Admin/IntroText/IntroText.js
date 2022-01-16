@@ -7,7 +7,7 @@ const IntroText = () => {
   const [isDelete, setIsDelete] = useState(null);
   const [isUpdate, setIsUpdated] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/intro")
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/intro")
       .then((res) => res.json())
       .then((data) => setIntroTexts(data));
   }, [isDelete, isUpdate]);
@@ -23,7 +23,7 @@ const IntroText = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `http://localhost:5000/deleteIntro/${id}`,
+          `https://peaceful-scrubland-01312.herokuapp.com/deleteIntro/${id}`,
           {
             method: "DELETE",
             headers: { "Content-type": "application/json" },
@@ -57,7 +57,7 @@ const IntroText = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/intro", {
+    fetch("https://peaceful-scrubland-01312.herokuapp.com/intro", {
       method: "POST",
       headers: {
         "content-type": "application/json",
