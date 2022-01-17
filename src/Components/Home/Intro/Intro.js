@@ -5,6 +5,7 @@ import star from "../../../imgs/Star.png"
 import Zoom from 'react-reveal/Zoom';
 import Bounce from 'react-reveal/Bounce';
 const Intro = () => {
+
   const [analysiss, setAnalysis] = useState([]);
   useEffect(() => {
     fetch("https://peaceful-scrubland-01312.herokuapp.com/analysis")
@@ -18,6 +19,15 @@ const Intro = () => {
       .then((res) => res.json())
       .then((data) => setIntroTexts(data));
   }, []);
+  
+function copyText() {
+  const copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  alert("Copied the text: " + copyText.value);
+}
+
   return (
     <div className="container">
       <div className="intro">
@@ -37,10 +47,11 @@ const Intro = () => {
             </p>
             <div className="d-flex address">
               <div className="address-box">
-              {introText.address_box}
+              <input type="text" value={introText.address_box} id="myInput"/>
+              
               </div>
             
-              <button className="main-btn">Copy Address</button>
+              <button onClick={copyText} className="main-btn">Copy Address</button>
             </div>
             </Zoom>
             
