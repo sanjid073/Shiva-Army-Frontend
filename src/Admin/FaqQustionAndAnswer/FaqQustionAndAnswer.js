@@ -23,10 +23,13 @@ const FaqQustionAndAnswer = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://peaceful-scrubland-01312.herokuapp.com/deleteAccordion/${id}`, {
-          method: "DELETE",
-          headers: { "Content-type": "application/json" },
-        })
+        fetch(
+          `https://peaceful-scrubland-01312.herokuapp.com/deleteAccordion/${id}`,
+          {
+            method: "DELETE",
+            headers: { "Content-type": "application/json" },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

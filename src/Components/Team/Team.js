@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Team.css";
-import ShivaToken from "../../Components/Home/ShivaToken/ShivaToken"
+import ShivaToken from "../../Components/Home/ShivaToken/ShivaToken";
 import team_1 from "../../imgs/team-1.png";
 import team_2 from "../../imgs/team-2.png";
 import team_3 from "../../imgs/team-3.png";
@@ -52,8 +52,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-
-        <ShivaToken/>
+        <ShivaToken />
       </div>
     </div>
   );

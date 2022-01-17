@@ -88,7 +88,7 @@ const IntroText = () => {
             rows="8"
             {...register("intro_sub", { required: true })}
           ></textarea>
-          
+
           <textarea
             name="address_box"
             id=""
@@ -97,7 +97,6 @@ const IntroText = () => {
             rows="2"
             {...register("address_box", { required: true })}
           ></textarea>
-          
 
           <input type="submit" />
         </form>
@@ -105,16 +104,13 @@ const IntroText = () => {
 
       {introTexts.map((introText) => (
         <div className="intro">
-           <p className="m-0">
-             {introText.intro_sub}
-            </p>
-            <div className="mx-auto address mt-0">
-              <div className="address-box mx-auto ">
-                  {introText.address_box}
-                {/* 0xc748673057861a797275CD8A068AbB95A9 */}
-              </div>
-            
+          <p className="m-0">{introText.intro_sub}</p>
+          <div className="mx-auto address mt-0">
+            <div className="address-box mx-auto ">
+              {introText.address_box}
+              {/* 0xc748673057861a797275CD8A068AbB95A9 */}
             </div>
+          </div>
           <button
             onClick={() => deleteOrders(introText._id)}
             className="btn btn-danger mt-2 "

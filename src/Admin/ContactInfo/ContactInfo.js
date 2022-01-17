@@ -112,7 +112,7 @@ const ContactInfo = () => {
             rows="2"
             {...register("contact_discord", { required: true })}
           ></textarea>
-          
+
           <textarea
             name="Instagram link"
             className="mb-3"
@@ -121,7 +121,6 @@ const ContactInfo = () => {
             rows="2"
             {...register("contact_instagram", { required: true })}
           ></textarea>
-          
 
           <input type="submit" />
         </form>
@@ -134,7 +133,7 @@ const ContactInfo = () => {
           <p>{contactTexts.contact_youtube}</p>
           <p>{contactTexts.contact_discord}</p>
           <p>{contactTexts.contact_instagram}</p>
-          
+
           <button
             onClick={() => deleteOrders(contactTexts._id)}
             className="btn btn-danger mt-2 "

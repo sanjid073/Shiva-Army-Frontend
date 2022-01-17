@@ -3,11 +3,15 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const TokenomicsText = () => {
-  const [tokenomoicsSubHeadingTexts, setTokenomoicsSubHeadingTexts] = useState([]);
+  const [tokenomoicsSubHeadingTexts, setTokenomoicsSubHeadingTexts] = useState(
+    []
+  );
   const [isDelete, setIsDelete] = useState(null);
   const [isUpdate, setIsUpdated] = useState(null);
   useEffect(() => {
-    fetch("https://peaceful-scrubland-01312.herokuapp.com/tokenomoicsSubHeading")
+    fetch(
+      "https://peaceful-scrubland-01312.herokuapp.com/tokenomoicsSubHeading"
+    )
       .then((res) => res.json())
       .then((data) => setTokenomoicsSubHeadingTexts(data));
   }, [isDelete, isUpdate]);
@@ -57,17 +61,24 @@ const TokenomicsText = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("https://peaceful-scrubland-01312.herokuapp.com/tokenomoicsSubHeading", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      "https://peaceful-scrubland-01312.herokuapp.com/tokenomoicsSubHeading",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          Swal.fire("Tokenomoics SubHeading Added!", "Review has been added!", "success");
+          Swal.fire(
+            "Tokenomoics SubHeading Added!",
+            "Review has been added!",
+            "success"
+          );
           reset();
         } else {
         }
@@ -77,7 +88,9 @@ const TokenomicsText = () => {
   return (
     <div className="analysis">
       <div className="from-section text-center">
-        <h3 className="fw-bold text-center">UpDate your Tokenomoics SubHeading</h3>
+        <h3 className="fw-bold text-center">
+          UpDate your Tokenomoics SubHeading
+        </h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           {errors.star && <span>Please type Number between 0-5</span>}
           <textarea
@@ -95,10 +108,8 @@ const TokenomicsText = () => {
 
       {tokenomoicsSubHeadingTexts.map((tokenomoicsSubHeading) => (
         <div className="intro">
-           <p className="m-0">
-             {tokenomoicsSubHeading.tokenomoics_sub}
-            </p>
-            
+          <p className="m-0">{tokenomoicsSubHeading.tokenomoics_sub}</p>
+
           <button
             onClick={() => deleteOrders(tokenomoicsSubHeading._id)}
             className="btn btn-danger mt-2 "

@@ -72,7 +72,6 @@ const Tokenomoics = () => {
             </div>
           </div>
         ))}
-
         <ShivaToken />
       </div>
     </div>

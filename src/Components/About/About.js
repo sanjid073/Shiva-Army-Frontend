@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./About.css";
 import pet from "../../imgs/Frame (1).png";
-import Shake from 'react-reveal/Shake';
+import Shake from "react-reveal/Shake";
 
 const About = () => {
   const [aboutTexts, setAboutTexts] = useState([]);
@@ -22,11 +22,11 @@ const About = () => {
           <div className="col-lg-6">
             {aboutTexts.map((aboutText) => (
               <Shake>
-              <div className="about-info">
-                <h3>Shiba Army Token Protocol</h3>
-                <p>{aboutText.about_text}</p>
-                <button className="main-btn">Show more</button>
-              </div>
+                <div className="about-info">
+                  <h3>Shiba Army Token Protocol</h3>
+                  <p>{aboutText.about_text}</p>
+                  <button className="main-btn">Show more</button>
+                </div>
               </Shake>
             ))}
           </div>

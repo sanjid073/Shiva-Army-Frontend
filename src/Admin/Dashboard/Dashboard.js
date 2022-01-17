@@ -3,14 +3,14 @@ import { a } from "react-router-dom";
 import "./Dashboard.css";
 import Analysis from "../../Admin/Analysis/Analysis";
 import FaqQustionAndAnswer from "../FaqQustionAndAnswer/FaqQustionAndAnswer";
-import AboutText from "../../Admin/AboutText/AboutText"
+import AboutText from "../../Admin/AboutText/AboutText";
 import HolderAndPrice from "../HolderAndPrice/HolderAndPrice";
 import UseFirebase from "../../Hooks/UseFirebase";
 import IntroText from "../IntroText/IntroText";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import TokenomicsText from "../TokenomicsText/TokenomicsText";
 const Dashboard = () => {
-    const {Logout} = UseFirebase()
+  const { Logout } = UseFirebase();
   return (
     <div class="" id="wrapper">
       <a
@@ -39,7 +39,6 @@ const Dashboard = () => {
         aria-labelledby="offcanvasExampleLabel"
       >
         <div class="offcanvas-header">
-          
           <button
             type="button"
             class="btn-close text-reset"
@@ -95,14 +94,9 @@ const Dashboard = () => {
               >
                 <i class="fas fa-comment-dots me-2"></i>Tokenomoics Sub Heading
               </a>
+
               <a
-                href=""
-                class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-              >
-                <i class="fas fa-map-marker-alt me-2"></i>Outlet
-              </a>
-              <a
-              onClick={Logout}
+                onClick={Logout}
                 href="/"
                 class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"
               >
@@ -115,8 +109,6 @@ const Dashboard = () => {
 
       <div id="page-content-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-          
-
           <button
             class="navbar-toggler"
             type="button"
@@ -133,7 +125,7 @@ const Dashboard = () => {
         <div class="container-fluid px-4">
           <div class="row my-5">
             <div id="introText">
-              <IntroText/>
+              <IntroText />
             </div>
             <hr />
             <div id="Analytics">
@@ -141,7 +133,7 @@ const Dashboard = () => {
             </div>
             <hr />
             <div id="TokenomoicsSubHeading">
-              <TokenomicsText/>
+              <TokenomicsText />
             </div>
             <hr />
             <div id="FaqQustion">
@@ -149,14 +141,14 @@ const Dashboard = () => {
             </div>
             <hr />
             <div id="aboutText">
-              <AboutText/> 
+              <AboutText />
             </div>
             <hr />
             <div id="holderAndPrice">
-            <HolderAndPrice/> 
+              <HolderAndPrice />
             </div>
             <div id="contactInfo">
-            <ContactInfo/> 
+              <ContactInfo />
             </div>
           </div>
         </div>
