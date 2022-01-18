@@ -51,7 +51,7 @@ const BrandPartner = () => {
       {aboutTexts.map((aboutText) => (
         <div className="about-header">
           <h3>About us</h3>
-          <p className="w-25 mx-auto">{aboutText.about_sub}</p>
+          <p className="w-50 mx-auto">{aboutText.about_sub}</p>
         </div>
       ))}
     </div>

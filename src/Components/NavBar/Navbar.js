@@ -37,7 +37,7 @@ const Navbar = () => {
                 aria-current="page"
                 to="tokenomoics"
               >
-                tokenomoics
+                Tokenomoics
               </NavLink>
             </li>
             <li className="nav-item">

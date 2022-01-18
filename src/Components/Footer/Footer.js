@@ -30,9 +30,9 @@ const Footer = () => {
           <div className="col-lg-3">
             <div className="footer-about">
               <h3>About</h3>
-              <NavLink to="/">Product</NavLink>
-              <NavLink to="/">Resource</NavLink>
-              <NavLink to="/">Term & Condition</NavLink>
+              <NavLink to="/comingSoon">Product</NavLink>
+              <NavLink to="/comingSoon">Resource</NavLink>
+              <NavLink to="/comingSoon">Term & Condition</NavLink>
               <NavLink to="/FAQ">FAQ</NavLink>
             </div>
           </div>
@@ -40,9 +40,9 @@ const Footer = () => {
             <div className="footer-Company">
               <h3>Company</h3>
               <NavLink to="/team">Our Team</NavLink>
-              <NavLink to="/">Partner With Us</NavLink>
-              <NavLink to="/">Privacy & Policy</NavLink>
-              <NavLink to="/">Features</NavLink>
+              <NavLink to="/comingSoon">Partner With Us</NavLink>
+              <NavLink to="/comingSoon">Privacy & Policy</NavLink>
+              <NavLink to="/comingSoon">Features</NavLink>
             </div>
           </div>
           <div className="col-lg-3">

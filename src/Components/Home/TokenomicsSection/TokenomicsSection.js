@@ -30,7 +30,7 @@ const TokenomicsSection = () => {
           <img className="star-1" src={star} alt="" />
           <h3>Tokenomics</h3>
           {tokenomoicsSubHeadingTexts.map((tokenomoicsSubHeading) => (
-            <p className="w-25 mx-auto">
+            <p className="w-50 mx-auto">
               {tokenomoicsSubHeading.tokenomoics_sub}
             </p>
           ))}

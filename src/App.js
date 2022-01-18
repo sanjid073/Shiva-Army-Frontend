@@ -11,6 +11,7 @@ import Login from "./Admin/Login/Login";
 import Dashboard from "./Admin/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Team from "./Components/Team/Team";
+import CommingSoon from "./Components/CommingSoon/CommingSoon";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/FAQ" element={<Faq/>} />
           <Route path="/team" element={<Team/>} />
           <Route path="/adminLogin" element={<Login/>} />
+          <Route path="/comingSoon" element={<CommingSoon/>} />
       
           <Route
           path="/DashBoard"
